@@ -39,13 +39,69 @@ namespace Warehouse_Management_System.Domain.Interfaces
         Task<int> RemoveProductionAsync(int productionId);
 
         /// <summary>
+        /// Добавляет нового поставщика.
+        /// </summary>
+        /// <param name="newSupplier">Новый поставщик для добавления.</param>
+        /// <returns>Добавленный поставщик.</returns>
+        Task<Supplier> AddSupplierAsync(Supplier newSupplier);
+
+        /// <summary>
+        /// Получает поставщика по его идентификатору.
+        /// </summary>
+        /// <param name="id">Идентификатор поставщика.</param>
+        /// <returns>Поставщик с указанным идентификатором.</returns>
+        Task<Supplier?> GetSupplierById(int id);
+
+        /// <summary>
+        /// Обновляет существующего поставщика.
+        /// </summary>
+        /// <param name="updateSupplier">Поставщик с обновленными данными.</param>
+        /// <returns>Обновленный поставщик.</returns>
+        Task<Supplier> UpdateSupplierAsync(Supplier updateSupplier);
+
+        /// <summary>
+        /// Удаляет поставщика по его идентификатору.
+        /// </summary>
+        /// <param name="supplierId">Идентификатор поставщика для удаления.</param>
+        /// <returns>Идентификатор удаленного поставщика.</returns>
+        Task<int> RemoveSupplierAsync(int supplierId);
+
+        /// <summary>
+        /// Добавляет новую накладную.
+        /// </summary>
+        /// <param name="newReceiptInvoice">Новая накладная для добавления.</param>
+        /// <returns>Добавленная накладная.</returns>
+        Task<ReceiptInvoice> AddReceiptInvoiceAsync(ReceiptInvoice newReceiptInvoice);
+
+        /// <summary>
+        /// Получает накладную по её идентификатору.
+        /// </summary>
+        /// <param name="id">Идентификатор накладной.</param>
+        /// <returns>Накладная с указанным идентификатором.</returns>
+        Task<ReceiptInvoice?> GetReceiptInvoiceById(int id);
+
+        /// <summary>
+        /// Обновляет существующую накладную.
+        /// </summary>
+        /// <param name="updateReceiptInvoice">Накладная с обновленными данными.</param>
+        /// <returns>Обновленная накладная.</returns>
+        Task<ReceiptInvoice> UpdateReceiptInvoiceAsync(ReceiptInvoice updateReceiptInvoice);
+
+        /// <summary>
+        /// Удаляет накладную по её идентификатору.
+        /// </summary>
+        /// <param name="receiptInvoiceId">Идентификатор накладной для удаления.</param>
+        /// <returns>Идентификатор удаленной накладной.</returns>
+        Task<int> RemoveReceiptInvoiceAsync(int receiptInvoiceId);
+
+        /// <summary>
         /// Получает список всех ячеек хранения.
         /// </summary>
         /// <returns>Список ячеек хранения.</returns>
         Task<List<StorageCell>> GetAllCellsAsync();
 
         /// <summary>
-        /// Получает ячейку хранения по ее идентификатору.
+        /// Получает ячейку хранения по её идентификатору.
         /// </summary>
         /// <param name="id">Идентификатор ячейки хранения.</param>
         /// <returns>Ячейка хранения с указанным идентификатором.</returns>
@@ -121,7 +177,7 @@ namespace Warehouse_Management_System.Domain.Interfaces
         Task<List<CurrentInstruction>> GetAllCurrentInstruction();
 
         /// <summary>
-        /// Получает текущую инструкцию по ее идентификатору.
+        /// Получает текущую инструкцию по её идентификатору.
         /// </summary>
         /// <param name="id">Идентификатор текущей инструкции.</param>
         /// <returns>Текущая инструкция с указанным идентификатором.</returns>
@@ -142,7 +198,7 @@ namespace Warehouse_Management_System.Domain.Interfaces
         Task<CurrentInstruction> UpdateCurrentInstructionAsync(CurrentInstruction updateCurrentInstruction);
 
         /// <summary>
-        /// Удаляет текущую инструкцию по ее идентификатору.
+        /// Удаляет текущую инструкцию по её идентификатору.
         /// </summary>
         /// <param name="currentInstructionId">Идентификатор текущей инструкции для удаления.</param>
         /// <returns>Идентификатор удаленной текущей инструкции.</returns>
@@ -155,7 +211,7 @@ namespace Warehouse_Management_System.Domain.Interfaces
         Task<List<CompletedInstruction>> GetAllCompletedInstruction();
 
         /// <summary>
-        /// Получает завершенную инструкцию по ее идентификатору.
+        /// Получает завершенную инструкцию по её идентификатору.
         /// </summary>
         /// <param name="id">Идентификатор завершенной инструкции.</param>
         /// <returns>Завершенная инструкция с указанным идентификатором.</returns>
@@ -176,7 +232,7 @@ namespace Warehouse_Management_System.Domain.Interfaces
         Task<CompletedInstruction> UpdateCompletedInstructionAsync(CompletedInstruction updateCompletedInstruction);
 
         /// <summary>
-        /// Удаляет завершенную инструкцию по ее идентификатору.
+        /// Удаляет завершенную инструкцию по её идентификатору.
         /// </summary>
         /// <param name="completedInstructionId">Идентификатор завершенной инструкции для удаления.</param>
         /// <returns>Идентификатор удаленной завершенной инструкции.</returns>

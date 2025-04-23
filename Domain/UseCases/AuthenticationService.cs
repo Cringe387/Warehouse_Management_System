@@ -4,7 +4,7 @@ using Warehouse_Management_System.Domain.DTOs;
 using Warehouse_Management_System.Domain.Interfaces;
 using Warehouse_Management_System.Domain.DTO;
 
-namespace Warehouse_Management_System.Domain.ContractsRealization
+namespace Warehouse_Management_System.Domain.UseCases
 {
     public class AuthenticationService(IRepository _repository) : IAuthenticationService
     {
